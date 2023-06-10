@@ -2,7 +2,7 @@ fx_version 'cerulean'
 
 game 'gta5'
 author 'WOLF STUDIO DEVELOPMENTS'
-description 'WOLF STUDIO DEVELOPMENTS ZONE CONTROL'
+description 'ZONE CONTROL'
 
 
 client_scripts {
