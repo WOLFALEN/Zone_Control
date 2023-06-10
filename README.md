@@ -20,3 +20,5 @@ The script basically allows you to construct a zone that can start, stop, pause 
 + To Stop Zone - /stoptzone 
 + To Pause Zone - /pausezone
 + To Shrink Zone - /shrinktzone
+
+https://cdn.discordapp.com/attachments/890204444426403922/1117010944866914334/Untitled_video_-_Made_with_Clipchamp.mp4
