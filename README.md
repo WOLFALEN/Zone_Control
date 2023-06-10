@@ -1,9 +1,22 @@
 # Zone_Control
 Fivem Zone Control
+author 'WOLF STUDIO DEVELOPMENTS'
+description 'WOLF STUDIO DEVELOPMENTS ZONE CONTROL'
 
-The script basically allows you to construct a zone that can start, stop, and shrink.
+The script basically allows you to construct a zone that can start, stop, pause & shrink in a fixed coords.
 
-Commands :
-To Start Zone - /startzone
-To Stop Zone - /stoptzone
-To Shrink Zone - /shrinktzone
+**Config FIle**:
+
++ Set Coords 
++ Marker Type
++ Size or Radius
++ Color
++ Shrike Speed
+
+
+**Commands** : 
+
++ To Start Zone - /startzone 
++ To Stop Zone - /stoptzone 
++ To Pause Zone - /pausezone
++ To Shrink Zone - /shrinktzone
