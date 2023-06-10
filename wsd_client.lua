@@ -13,9 +13,9 @@ RegisterCommand('startzone', function(source, args)
                 Config.zone.y,
                 Config.zone.z,
                 0, 0, 0, 0, 0, 0,
-                Config.markerProperties.size.x,
-                Config.markerProperties.size.y,
-                Config.markerProperties.size.z,
+                Config.markerProperties.radius * 2,
+                Config.markerProperties.radius * 2,
+                Config.markerProperties.radius,
                 Config.markerProperties.color.r,
                 Config.markerProperties.color.g,
                 Config.markerProperties.color.b,
@@ -23,18 +23,28 @@ RegisterCommand('startzone', function(source, args)
                 0, 0, 0, 0
             )
             Citizen.Wait(0)
-            if not isShrinkingPaused then
-                Config.markerProperties.size = Config.markerProperties.size - Config.shrinkRate
-
-                if Config.markerProperties.size.x <= 0 or Config.markerProperties.size.y <= 0 or Config.markerProperties.size.z <= 0 then
-                    Config.markerProperties.size = initialSize
-                    isMarkerActive = false
-                    break
-                end
-            end
         end
     end)
 end, false)
+
+RegisterCommand('shrinkzone', function(source, args)
+    local playerId = source
+
+    Citizen.CreateThread(function()
+        while true do
+            Config.markerProperties.radius = Config.markerProperties.radius - Config.shrinkRate
+
+            if Config.markerProperties.radius <= 0 then
+                Config.markerProperties.radius = initialRadius
+                isMarkerActive = false
+                break
+            end
+
+            Citizen.Wait(10)
+        end
+    end)
+end, false)
+
 
 RegisterCommand('pausezone', function(source, args)
     local playerId = source
