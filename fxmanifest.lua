@@ -7,4 +7,5 @@ description 'WOLF STUDIO DEVELOPMENTS ZONE CONTROL'
 
 client_scripts {
     'wsd_client.lua',
+    'config.lua',
 }
