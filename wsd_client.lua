@@ -32,12 +32,14 @@ RegisterCommand('shrinkzone', function(source, args)
 
     Citizen.CreateThread(function()
         while true do
-            Config.markerProperties.radius = Config.markerProperties.radius - Config.shrinkRate
+            if not isShrinkingPaused then
+                Config.markerProperties.radius = Config.markerProperties.radius - Config.shrinkRate
 
-            if Config.markerProperties.radius <= 0 then
-                Config.markerProperties.radius = initialRadius
-                isMarkerActive = false
-                break
+                if Config.markerProperties.radius <= 0 then
+                    Config.markerProperties.radius = initialRadius
+                    isMarkerActive = false
+                    break
+                end
             end
 
             Citizen.Wait(10)
@@ -45,14 +47,13 @@ RegisterCommand('shrinkzone', function(source, args)
     end)
 end, false)
 
-
 RegisterCommand('pausezone', function(source, args)
     local playerId = source
 
     isShrinkingPaused = true
 end, false)
 
-RegisterCommand('shrinkzone', function(source, args)
+RegisterCommand('resumeshrink', function(source, args)
     local playerId = source
 
     isShrinkingPaused = false
